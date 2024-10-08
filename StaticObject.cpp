@@ -1,6 +1,6 @@
 #include "StaticObject.h"
 
-StaticObject::StaticObject(float _x, float _y) : Entity(_x, _y)
+StaticObject::StaticObject(float _loc_x, float _loc_y) : Entity(_loc_x, _loc_y)
 {
-	std::cout << "Static Object just created at x=" << _x <<" and y=" << _y << ".";
+	std::cout << "Static Object just created at x=" << _loc_x <<" and y=" << _loc_y << "." << std::endl;
 }

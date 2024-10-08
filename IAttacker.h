@@ -5,7 +5,7 @@
 class IAttacker
 {
 public :
-	virtual void Attack(Alive*) = 0;
+	virtual void Attack(Alive* _target) = 0;
 };
 
 #endif

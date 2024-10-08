@@ -19,6 +19,8 @@ class Entity {
 public:
 	Entity(float loc_x, float loc_y);
 	virtual std::string getLocation() const;
+	float getLocationX() const;
+	float getLocationY() const;
 	virtual void setLocation(float const _x, float const _y);
 };
 

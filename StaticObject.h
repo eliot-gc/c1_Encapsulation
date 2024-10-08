@@ -8,7 +8,7 @@ class StaticObject : public Entity
 {
 
 public:
-	StaticObject(float, float);
+	StaticObject(float _loc_x, float _loc_y);
 };
 
 #endif

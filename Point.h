@@ -1,14 +1,8 @@
-//
-//  Point.h
-//  point
-//
-//  Created by Maxine Constantinian on 07/10/2024.
-//
-
 #ifndef POINT_H__
 #define POINT_H__
 
 #include <string>
+#include <sstream>
 
 class Point {
 public:
@@ -16,7 +10,7 @@ public:
     float y;
     float z;
     
-    Point(float, float, float);
+    Point(float _x, float  _y, float _z);
     
     std::string ToString();
 };

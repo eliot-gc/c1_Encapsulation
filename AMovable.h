@@ -8,14 +8,13 @@ class AMovable
 	Vector2 direction;
 	float velocity;
 
-
-	AMovable();
-	AMovable(float, float, float);
-
 public:
+	AMovable();
+	AMovable(float _direction_x, float _direction_y, float _velocity);
+
 	virtual void setDirection(float, float);
 	virtual void setVelocity(float);
-	virtual void Move() = 0;
+	virtual void Move(float, float) = 0;
 };
 
 #endif
