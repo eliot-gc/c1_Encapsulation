@@ -8,10 +8,18 @@
 #include <iostream>
 #include "Entity.h"
 
-Entity::Entity() : position(0.f, 0.f, 0.f) {
-    
+Entity::Entity(float loc_x, float loc_y) : location(loc_x, loc_y) {}
+
+
+std::string Entity::getLocation() const
+{
+	std::stringstream temp_stream;
+	temp_stream << location.getX() << ", " << location.getY();
+	return temp_stream.str();
 }
 
-void Entity::sayHello() {
-    std::cout << "Hello from Entity" << std::endl;
+void Entity::setLocation(float const _x, float const _y)
+{
+	location.setX(_x);
+	location.setY(_y);
 }

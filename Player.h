@@ -16,7 +16,6 @@ class Player : public Entity, public IAlive {
 
 public:
     Player();
-    void sayHello() override;
     
     bool IsAlive() override;
     void TakeDamage(int _dmg) override;

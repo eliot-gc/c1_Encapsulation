@@ -1,19 +1,22 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include "Windows.h"
-#include "Point.h"
+#include "Entity.h"
+#include "Player.h"
+#include "Vector2.h"
+#include "StaticObject.h"
+#include "BreakableObject.h"
 
 
-void cinReset()
-{
-    std::cin.ignore();
-    std::cin.clear();
+void applyDamage(IAlive* alive) {
+    alive->TakeDamage(10);
 }
 
-int main()
-{
-    
+int main(int argc, const char* argv[]) {
+    //Player* p = new Player();
 
+    //hello(p);
+    //applyDamage(p);
+    //std::cout << p->IsAlive();
+
+    BreakableObject test(45.54f, 14.4f, 20, 10);
     return 0;
 }

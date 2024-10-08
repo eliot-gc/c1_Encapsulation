@@ -9,14 +9,17 @@
 #define ENTITY_H__
 
 #include "Point.h"
+#include "Vector2.h"
+#include <sstream>
+#include <string>
 
 class Entity {
-protected:
-    Point position;
-    
+	Vector2 location;
+
 public:
-    Entity();
-    virtual void sayHello() = 0;
+	Entity(float loc_x, float loc_y);
+	virtual std::string getLocation() const;
+	virtual void setLocation(float const _x, float const _y);
 };
 
 #endif
