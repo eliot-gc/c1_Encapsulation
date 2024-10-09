@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "StaticObject.h"
 #include "BreakableObject.h"
+#include "World.h"
 #include <Windows.h>
 
 int main(int argc, const char* argv[]) {
@@ -36,6 +37,10 @@ int main(int argc, const char* argv[]) {
     std::cout << "-Notre héros acculé lance un coup d'épée en avant et blesse le zombie qui meurt sur le coup !" << std::endl;
     player.Attack(&zombie);
     std::cout << std::endl;
+
+    World world;
+    world.Init();
+    world.Step();
 
     return 0;
 }
