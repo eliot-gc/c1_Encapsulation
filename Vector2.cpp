@@ -23,3 +23,8 @@ void Vector2::setY(float _y)
 {
 	y = _y;
 }
+
+float Vector2::getDistance(const Vector2& origin, const Vector2& target) const
+{
+	retun (target.x - origin.x, target.y - origin.y); //return std::sqrt(dx * dx + dy * dy);
+}

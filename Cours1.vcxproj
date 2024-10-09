@@ -135,7 +135,6 @@
     <ClCompile Include="IAttacker.cpp" />
     <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Point.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="World.cpp" />
@@ -148,7 +147,6 @@
     <ClInclude Include="IAttacker.h" />
     <ClInclude Include="Mob.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Point.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="World.h" />

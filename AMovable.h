@@ -12,9 +12,12 @@ public:
 	AMovable();
 	AMovable(float _direction_x, float _direction_y, float _velocity);
 
+	float getVelocity() const;
+
 	virtual void setDirection(float, float);
 	virtual void setVelocity(float);
 	virtual void Move(float, float) = 0;
+	int getSign(const float value) const;
 };
 
 #endif

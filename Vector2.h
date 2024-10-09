@@ -13,6 +13,7 @@ public:
 	float getY() const;
 	void setX(float);
 	void setY(float);
+	float getDistance(const Vector2& origin, const Vector2& target) const;
 };
 
 #endif

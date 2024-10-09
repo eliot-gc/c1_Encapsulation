@@ -10,7 +10,8 @@ void Mob::takeDamage(float)
 	std::cout << "Mob just die" << std::endl; 
 }
 
-void Mob::Move(float _new_loc_x, float _new_loc_y)
+void Mob::Move(float _add_x, float _add_y)
 {
-	std::cout << "Mob move to X=" << _new_loc_x << " and Y=" << _new_loc_y << std::endl;
+	this->setLocation(this->getLocationX() + getSign(_add_x) * getVelocity(), this->getLocationY() + getSign(_add_y) * getVelocity());
+	std::cout << "Déplacement de " << getSign(_add_x) * getVelocity() << "X et de " << getSign(_add_y) * getVelocity() << "Y." << std::endl;
 }

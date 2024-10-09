@@ -1,5 +1,4 @@
 #include "World.h"
-#include <iostream>
 
 void World::Init()
 {
@@ -28,11 +27,22 @@ void World::Step()
 		else if( dynamic_cast<Mob*>(Entities[i]))
 		{
 			std::cout << "Mob";
+			if (std::find(Entities.begin(), Entities.end(), bridge) != Entities.end()) //BreakableObject still exist?
+			{
+				skeleton->Move(bridge->getLocationX(), bridge->getLocationY());
+			}
 			continue;
 		}
 		else if( dynamic_cast<Player*>(Entities[i]))
 		{
 			std::cout << "Player";
+			if (std::find(Entities.begin(), Entities.end(), skeleton) != Entities.end()) //Mob still exist?
+			{
+				p->Move(skeleton->getLocationX(), skeleton->getLocationY());
+
+				Vector2 distance;
+				if (distance.getDistance(p->getLocation(), skeleton->getLocation())  0)
+			}
 			continue;
 		}
 	}

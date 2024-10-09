@@ -3,11 +3,16 @@
 Entity::Entity(float loc_x, float loc_y) : location(loc_x, loc_y) {}
 
 
-std::string Entity::getLocation() const
+std::string Entity::getLocationStr() const
 {
 	std::stringstream temp_stream;
 	temp_stream << "X=" << location.getX() << ", Y=" << location.getY();
 	return temp_stream.str();
+}
+
+Vector2 Entity::getLocation() const
+{
+	return location;
 }
 
 float Entity::getLocationX() const
