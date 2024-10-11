@@ -1,7 +1,6 @@
 #ifndef ENTITY_H__
 #define ENTITY_H__
 
-#include "Point.h"
 #include "Vector2.h"
 #include <sstream>
 #include <string>
