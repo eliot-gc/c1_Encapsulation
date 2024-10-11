@@ -17,37 +17,41 @@ void World::Step()
 {
 	StaticObject* tree = (StaticObject*)Entities[0];
 	BreakableObject* bridge = (BreakableObject*)Entities[1];
-	Mob* skeleton = (Mob*)Entities[2];
-	Player* p = (Player*)Entities[3];
+
+	bool test = dynamic_cast<Player*>(Entities[2]);
+	std::cout << test;
 
 	for (int i(0); i < Entities.size(); i++)
 	{
-		if (Entities[i] == nullptr) {continue;} //CATCH NULLPTR
+		/*if (i == Entities.size() - 1) {
+			i = 0;
+			std::cout << std::endl << std::endl << std::endl << "New itteration" << std::endl << std::endl;
+		}*/
 
-		else if( dynamic_cast<Mob*>(Entities[i]))
+		//else if (Entities[i] == nullptr) {continue;} //CATCH NULLPTR
+
+		if (Mob* mob = dynamic_cast<Mob*>(Entities[i]))
 		{
-			std::cout << "Mob";
-			if (std::find(Entities.begin(), Entities.end(), bridge) != Entities.end()) //BreakableObject still exist?
-			{
-				skeleton->Move(bridge->getLocationX(), bridge->getLocationY());
+			for (int j(0); j < Entities.size(); j++) {
+				if (BreakableObject* _breakableobject = dynamic_cast<BreakableObject*>(Entities[j])) {
+					mob->Move(_breakableobject->getLocationX(), _breakableobject->getLocationY());
+				}
 			}
-			continue;
 		}
-		else if( dynamic_cast<Player*>(Entities[i]))
+		
+		else if (Player* p = dynamic_cast<Player*>(Entities[i]))
 		{
-			std::cout << "Player";
-			if (std::find(Entities.begin(), Entities.end(), skeleton) != Entities.end()) //Mob still exist?
-			{
-				p->Move(skeleton->getLocationX(), skeleton->getLocationY());
+			for (int j(0); j < Entities.size(); j++) {
 
-				Vector2 distance;
-				if (distance.getDistance(p->getLocation(), skeleton->getLocation())  0)
+				if (Mob* mob = dynamic_cast<Mob*>(Entities[j])) {
+					p->Move(mob->getLocationX(), mob->getLocationY());
+				}
+				
+				else if (BreakableObject* _breakableobject = dynamic_cast<BreakableObject*>(Entities[j]) and //SI LE MOB EST PAS EN VIE) {
+					p->Move(_breakableobject->getLocationX(), _breakableobject->getLocationY());
+				}
 			}
-			continue;
 		}
-	}
+	}	
 
-	if (Entities.size() != 0) {
-		Step();
-	}		
 }

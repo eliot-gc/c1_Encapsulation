@@ -12,6 +12,7 @@ void Mob::takeDamage(float)
 
 void Mob::Move(float _add_x, float _add_y)
 {
-	this->setLocation(this->getLocationX() + getSign(_add_x) * getVelocity(), this->getLocationY() + getSign(_add_y) * getVelocity());
-	std::cout << "Déplacement de " << getSign(_add_x) * getVelocity() << "X et de " << getSign(_add_y) * getVelocity() << "Y." << std::endl;
+	Vector2 directionNormalized(this->getLocation().getDirectionNormalized(Vector2(_add_x, _add_y)));
+	this->setLocation(this->getLocationX() + directionNormalized.getX() * getVelocity(), this->getLocationY() + directionNormalized.getY() * getVelocity());
+	std::cout << "Déplacement de " << directionNormalized.getX() * getVelocity() << "X et de " << directionNormalized.getY() * getVelocity() << "Y." << std::endl;
 }

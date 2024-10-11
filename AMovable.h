@@ -17,7 +17,7 @@ public:
 	virtual void setDirection(float, float);
 	virtual void setVelocity(float);
 	virtual void Move(float, float) = 0;
-	int getSign(const float value) const;
+	int Normalize(const float value) const;
 };
 
 #endif

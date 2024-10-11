@@ -38,13 +38,12 @@ int main(int argc, const char* argv[]) {
     //player.Attack(&zombie);
     //std::cout << std::endl;
 
-    //World world;
-    //world.Init();
-    //world.Step();
+    World world;
+    world.Init();
+    std::cout << "------------------------" << std::endl;
+    world.Step();
 
-
-    Mob test(1, 2, 3, 4, 5, 6, 7);
-    test.Move(1, -10);
+    std::cout << "Simulation Finished";
 
     return 0;
 }

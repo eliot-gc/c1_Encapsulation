@@ -19,7 +19,7 @@ void AMovable::setVelocity(float _velocity)
 	velocity = _velocity;
 }
 
-int AMovable::getSign(const float value) const
+int AMovable::Normalize(const float value) const
 {
 	return (value > 0) - (value < 0);
 }
