@@ -9,6 +9,7 @@ class Alive
 	float health;
 	bool isDead;
 
+protected:
 	virtual void setDead();
 
 public:

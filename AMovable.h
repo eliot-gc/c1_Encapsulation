@@ -17,6 +17,7 @@ public:
 	virtual void setDirection(float, float);
 	virtual void setVelocity(float);
 	virtual void Move(float, float) = 0;
+	virtual void MoveTo(float, float) = 0;
 	int Normalize(const float value) const;
 };
 

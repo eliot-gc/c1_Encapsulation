@@ -2,7 +2,6 @@
 
 void Alive::setDead()
 {
-    std::cout << "Entity is dead" << std::endl;
     this->isDead = true;
 }
 
@@ -10,7 +9,7 @@ Alive::Alive(float _health, float _max_health) : health(_health), max_health(_ma
 
 bool Alive::getIsDead() const
 {
-    return isDead;
+    return this->isDead;
 }
 
 float Alive::getmaxHealth() const
@@ -26,7 +25,7 @@ float Alive::getHealth() const
 void Alive::takeDamage(float healthModifier)
 {
     health += healthModifier;
-
+    
     if (health <= 0) {
         setDead();
     }

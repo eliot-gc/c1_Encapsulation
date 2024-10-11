@@ -15,7 +15,7 @@ public:
 	float getY() const;
 	void setX(float);
 	void setY(float);
-	float getDistance(const Vector2& target) const;
+	double getDistance(const Vector2& target) const;
 	Vector2 getDirection(const Vector2& target) const;
 	Vector2 getDirectionNormalized(const Vector2& target) const;
 };
